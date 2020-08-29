@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!-- shiro配置 -->
+   <!-- Realm -->
+   <bean id="myRealm" class="com.realm.MyRealm">
+   </bean>
+
+    <!-- 声明SecurityManager -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm"/>
+    </bean>
+
+    <!-- shiroFilter -->
+    <!-- 生产SpringShiroFilter
+         （ 持有shiro的过滤相关规则，可进行请求的过滤校验，校验请求是否合法 ）
+    -->
+    <bean id="shiroFilter04" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- 注入核心对象 -->
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 未登录，没权限时的跳转路径 -->
+<!--        <property name="loginUrl" value="/user/login"/>-->
+<!--         过滤器链 -->
+        <property name="filterChainDefinitions">
+            <value>
+                /user/**=anon
+                /admin/login=anon
+                /admin/**=roles["admin"]
+<!--                /**=authc-->
+                /addCarouselServlet=roles["admin"]
+                /addPopularizeServlet=roles["admin"]
+                /addVideoServlet=roles["admin"]
+                /addZoneServlet=roles["admin"]
+                /alterZoneServlet=roles["admin"]
+                /deleteCarouselServlet=roles["admin"]
+                /deleteCollectServlet=authc
+                /deleteCommentServlet=roles["admin"]
+                /deletePopularizeServlet=roles["admin"]
+                /deleteSelectedCollectServlet=authc
+                /deleteUploadVideoServlet=authc
+                /deleteUserServlet=roles["admin"]
+                /deleteVideoServlet=authc
+                /deleteZoneServlet=roles["admin"]
+                /videoCollectServlet=authc
+                /videolikeCountServlet=authc
+                /videoReportCountServlet=authc
+                /writeCommentServlet=authc
+            </value>
+        </property>
+    </bean>
+
+
+</beans>

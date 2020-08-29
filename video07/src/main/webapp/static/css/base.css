@@ -1,0 +1,337 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+/*防止多行文本框拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    color: #666;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.al {
+    text-align: left
+}
+
+.ac {
+    text-align: center
+}
+
+.ar {
+    text-align: right
+}
+
+.hide {
+    display: none
+}
+
+
+
+
+
+/*site-nav部分start*/
+.site-nav {
+    height: 30px;
+    line-height: 30px;
+    background-color: #F1F1F1;
+}
+.site-nav-send,
+.site-nav-r .fore {
+    padding: 0 25px 0 10px;
+    position: relative;
+}
+.site-nav-send:hover {
+    background-color: #ffffff;
+}
+.site-nav-send i,.fore i {
+    position: absolute;
+    width: 15px;
+    height: 7px;
+    top: 12px;
+    right: 8px;
+    font: 400 13px/15px "consolas";
+    overflow: hidden;
+}
+.site-nav-send s,.fore s {
+    position: absolute;
+    top: -7px;
+}
+.site-nav-r li {
+    padding: 0 10px;
+    float: left;
+}
+.site-nav-r .line {
+    width: 1px;
+    height: 12px;
+    background-color: #DDD;
+    margin-top: 9px;
+    padding: 0;
+}
+.site-nav .jd-tel {
+    position: relative;
+    padding-left:25px;
+}
+.site-nav .jd-tel span {
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 15px;
+    height: 20px;
+    background: url("../images/tel.png") no-repeat;
+}
+/*site-nav部分end*/
+
+/*topbanner部分start*/
+.topbanner {
+    background-color:#fd6500;
+}
+.td {
+    position: relative;
+}
+.close-banner {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 19px;
+    width: 19px;
+    background: url("../images/close-banner.png") no-repeat;
+}
+.close-banner:hover {
+    background-position: bottom;
+}
+/*topbanner部分end*/
+
+
+
+/*search部分start*/
+.search-logo {
+    float: left;
+    width: 362px;
+    height: 100px;
+    padding: 20px 0;
+}
+.search-logo a {
+    display: block;
+    width: 270px;
+    height: 60px;
+    text-indent: -9999em;
+    background: url("../images/logo.png") no-repeat;
+}
+.search-input {
+    float: left;
+    width: 538px;
+    height: 36px;
+    padding-top: 25px;
+}
+.search-input input {
+    padding-left:5px;
+    float: left;
+    color: #cccccc;
+    width: 449px;
+    height: 32px;
+    border: 2px solid #B61D1D;
+    border-right:0;
+}
+.search-input button {
+    float: left;
+    height: 36px;
+    width: 82px;
+    background-color: #B61D1D;
+    color: #fff;
+    font: 400 16px/36px "microsoft yahei";
+    cursor: pointer;
+}
+.search-car {
+    position: relative;
+    float: right;
+    width: 96px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 43px;
+    border: 1px solid #DFDFDF;
+    margin: 25px 65px 0 0;
+    background-color: #F9F9F9;
+}
+.icon1 {
+    position: absolute;
+    width: 18px;
+    height: 16px;
+    top: 9px;
+    left: 18px;
+    background: url("../images/tel.png") no-repeat 0 -58px;
+}
+.icon2{
+     position: absolute;
+     right: 10px;
+     color: #999;
+     font: 13px/34px "SimSun";
+ }
+.icon3{
+    position: absolute;
+    top: -5px;
+    width: 16px;
+    height: 14px;
+    background-color:  #B61D1D;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 7px 7px 7px 0;
+}
+.search-moreAlink {
+    float: left;
+    width: 520px;
+    height: 28px;
+    line-height: 28px;
+}
+.search-moreAlink a{
+    margin-right:8px ;
+}
+/*search部分end*/
+
+
+
+/*footer部分start*/
+.footer-top-slogen{
+    position: relative;
+    height: 94px;
+    width: 100%;
+    background-color: #F5F5F5;
+    margin-bottom: 16px;
+}
+.footer-top-slogen-icon {
+    position: absolute;
+    top:20px;
+    left: 50%;
+}
+.footer-top-slogen-icon1 {
+    margin-left: -604px;
+}
+.footer-top-slogen-icon2 {
+    margin-left: -302px;
+}
+.footer-top-slogen-icon4 {
+    margin-left: 302px;
+}
+.footer-top-shopping dl {
+    float: left;
+    width: 200px;
+}
+.footer-top-shopping .last-dl {
+    width: 100px;
+}
+.footer-top-shopping dt
+,.coverage h3{
+    height: 34px;
+    font: 400 16px/34px "微软雅黑";
+}
+.footer-top-shopping dd{
+    line-height: 20px;
+}
+.coverage {
+    width: 186px;
+    height: 169px;
+    float: right;
+    margin-right: 60px;
+    padding-left: 17px;
+    background: url("../images/china.png") no-repeat left bottom;
+}
+.coverage p{
+    padding-top: 8px;
+}
+/*footer部分end*/
